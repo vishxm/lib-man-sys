@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- RESOURCES -->
+    <link rel='stylesheet' href='../../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+
+    <link rel="stylesheet" href="../look.css">
+ <!-- Bootstrap Optional JavaScript -->
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>let $ = require('jquery');</script>
+    <script>require('popper.js');</script>
+    <script>require('bootstrap');</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../db_conn.js"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <h3>These are the transactions!</h3>
+        <hr>
+        <table class="table" id="transList">
+            <thead>
+                <tr>
+                    <th>Student's ID</th>
+                    <th>Student's Name</th>
+                    <th>Book's ISBN</th>
+                    <th>Book's Title</th>
+                </tr>
+            </thead> 
+
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        selectQry('select * from trans;', function(rows){
+            var tbl = '';
+
+            rows.forEach(function(row) {
+                tbl += '<tr>';
+                tbl = tbl + '<td>' + row.id + '</td>';
+                tbl = tbl + '<td>' + row.name + '</td>';
+                tbl = tbl + '<td>' + row.isbn + '</td>';
+                tbl = tbl + '<td>' + row.bookName + '</td>';
+                tbl += '</tr>';
+            });
+
+            document.querySelector('#transList > tbody').innerHTML = tbl;
+        })
+    </script>
+
+    <div class="container" style="align-content: center; text-align: center;">
+        <div class="row">
+            <div class="col-sm-3">
+                <a href="#"><button class="btnLink">Add a transaction!</button></a>
+            </div>   
+        </div>
+    </div>
+</body>
+
+</html>

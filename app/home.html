@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- RESOURCES -->
+        <link rel='stylesheet' href='../../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="look.css">
+     <!-- Bootstrap Optional JavaScript -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script>let $ = require('jquery');</script>
+        <script>require('popper.js');</script>
+        <script>require('bootstrap');</script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="../db_conn.js"></script>
+    </head>
+
+    <body>
+        <div class="container" >
+            <h1 style="text-align: center;">A minimal Library Management System</h1>         
+            <div class="row" style="padding-top: 50px;">
+                <div class="col-sm-4" style="align-content: center; text-align: center;">
+                    <button class="btnLink" id="showUser">Show Users</button>
+                </div>
+
+                <div class="col-sm-4" style="align-content: center; text-align: center;">
+                    <button class="btnLink" id="showBook">Show Books</button>
+                </div>
+
+                <div class="col-sm-4" style="align-content: center; text-align: center;">
+                    <button class="btnLink" id="showTrans">Show Transactions</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        addWindowLink('showUser', 'user/userList.html');
+        addWindowLink('showBook', 'book/bookList.html');
+        addWindowLink('showTrans', 'trans/transList.html');
+
+        function addWindowLink(bId, winURL) {
+            var btn = document.getElementById(bId);
+            btn.addEventListener('click', function(event) {
+                var electron = require('electron');
+                var BrowserWindow = electron.remote.BrowserWindow;
+                var path = require('path');
+                mPath = path.join('file://', __dirname,winURL);
+                console.log(mPath);
+                console.log(winURL);
+
+                let win = new BrowserWindow({width:1000, height:500, webPreferences:{nodeIntegration: true}});
+                win.on('close',function(){win = null});
+                win.loadURL(mPath);
+            });
+        }
+    </script>
+</html>
