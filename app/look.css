@@ -6,45 +6,37 @@ body
 
 .container
 {
-  padding:20px;
+    padding:20px;
 }
 
-h1
+h1, h3
 {
   border:solid black thin;
-  border-bottom:solid black 5px;
-  background-color:#1f2833;
-  color:#66fcf1;
+  background-color:#40434e;
+  color:#fffffa;
   padding:5px 20px 20px 20px;
 }
 
-h3
-{
-  border:solid black thin;
-  border-bottom:solid black 5px;
-  background-color:#1f2833;
-  color:#66fcf1;
-  padding:5px 20px 20px 20px;
-}
 
 input[type=text]{
-  background-color:antiquewhite;
+  background-color:#edf2f4;
 }
 
 input[type=submit],table th
 {
-  background-color:#1f2833;
-  color:#66fcf1;
+  background-color:#40434e;
+  color:#fffffa;
 }
 
 td{
-  background-color:#c5c6c7;
+  background-color:#603d43;
+  color: #fffffa;
 }
 
 
 .btnLink
 {
   padding:10px;
-  background-color: #1f2833;
-  color: #66fcf1;
+  background-color: #40434e;
+  color: #fffffa;
 }
