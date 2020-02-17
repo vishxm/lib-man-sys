@@ -36,7 +36,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES ('ABC001','Learn Python',3),('ABC002','Learn MySQL',4),('ABC003','Learn WebEngg',2),('ABC004','Learn ML',4),('ABC005','Learn HPC',3);
+INSERT INTO `book` VALUES ('ABC001','Learn Python',3),('ABC002','Learn MySQL',4),('ABC003','Learn WebEngg',2),('ABC004','Learn ML',4),('ABC005','Learn HPC',3),('ABC006','Learn ADBMS',6);
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'Vishwas'),(2,'Rujul'),(3,'Shubham'),(4,'Shrutik'),(5,'Kevin'),(6,'Fenish');
+INSERT INTO `user` VALUES (1,'Vishwas'),(2,'Rujul'),(3,'Shubham'),(4,'Shrutik'),(5,'Kevin'),(6,'Fenish'),(7,'Sunny');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -102,4 +102,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-15 16:10:31
+-- Dump completed on 2020-02-17 20:46:39
