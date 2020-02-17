@@ -21,18 +21,23 @@
 </head>
 <body>
     <div class="container">
-        <h3>Add a New User</h3>
+        <h3>Add a New Book</h3>
         <br>
-        <form id="userIn">
+        <form id="bookIn">
             
             <div class="form-group row">
-                <label class="col-sm-2" for="id">User's ID : </label>
-                <div class="col-sm-10"><input class="form-control" type="text" name="id"></div>
+                <label class="col-sm-2" for="id">Book's ISBN : </label>
+                <div class="col-sm-10"><input class="form-control" type="text" name="isbn"></div>
             </div>
 
             <div class="form-group row">
-                <label class="col-sm-2" for="name">User's Name : </label>
-                <div class="col-sm-10"><input class="form-control" type="text" name="name"></div>
+                <label class="col-sm-2" for="name">Book's Name : </label>
+                <div class="col-sm-10"><input class="form-control" type="text" name="bookName"></div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2" for="name">Book's Copies : </label>
+                <div class="col-sm-10"><input class="form-control" type="number" name="bookCount"></div>
             </div>
 
             <div class="form-group row">
@@ -42,7 +47,7 @@
     </div>
 
     <script>
-       $("#userIn").submit(function(event){
+       $("#bookIn").submit(function(event){
             var values = $(this).serializeArray();
             event.preventDefault();
 
@@ -53,9 +58,11 @@
 
             console.log(inputs);
 
-            var qry = "insert into user(id, name) values('" + inputs["id"] +"','" +inputs["name"]+"')";
+            var qry = "insert into book(isbn, bookName, bookCount) values('" + inputs["isbn"] +"','" +inputs["bookName"]+"','" + inputs["bookCount"] + "')";
             console.log(qry);
             dbQuery(qry);
+
+            
        });
     </script>
 
