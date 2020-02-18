@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- RESOURCES -->
+    <link rel='stylesheet' href='../../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+
+    <link rel="stylesheet" href="../look.css">
+ <!-- Bootstrap Optional JavaScript -->
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>let $ = require('jquery');</script>
+    <script>require('popper.js');</script>
+    <script>require('bootstrap');</script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="../../db_conn.js"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <h3>Remove a book!</h3>
+        <br>
+        <form id="bookOut">
+            
+            <div class="form-group row">
+                <label class="col-sm-2" for="id">Book's ISBN : </label>
+                <div class="col-sm-10"><input class="form-control" type="text" name="isbn"></div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2" for="name">Book's Name : </label>
+                <div class="col-sm-10"><input class="form-control" type="text" name="bookName"></div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-12"><input class="form-control" type="submit" value="Submit Query"></div>
+            </div>
+        </form>        
+    </div>
+
+    <script>
+       $("#bookOut").submit(function(event){
+            var values = $(this).serializeArray();
+            event.preventDefault();
+
+            var inputs = {};
+            $.each(values, function(k,v){
+                inputs[v.name] = v.value;
+            });
+
+            console.log(inputs);
+
+            var qry2 = "delete from trans where isbn = '"+inputs["isbn"]+"'";
+            console.log(qry2);
+            dbQuery(qry2);
+
+            var qry = "delete from book where isbn = '" + inputs["isbn"] + "' ";
+            console.log(qry);
+            dbQuery(qry);
+
+            
+       });
+    </script>
+
+</body>
+
+</html>
