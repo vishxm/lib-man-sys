@@ -1,0 +1,4 @@
+//solved 1. Can't issue the same book one has already issued in the past because id+isbn is primary key.
+2. Submitting issue query multiple times reduces the quantity of book multiple times.
+3. removing user removes transactions but book quanitity is not increased if issued.
+ 

@@ -49,12 +49,13 @@ DROP TABLE IF EXISTS `trans`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `trans` (
   `id` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL,
+  `name` varchar(200) DEFAULT NULL,
   `isbn` varchar(20) NOT NULL,
   `bookName` varchar(400) DEFAULT NULL,
-  `issDate` date DEFAULT NULL,
-  `retDate` date DEFAULT NULL,
-  PRIMARY KEY (`id`,`isbn`),
+  `issDate` date NOT NULL,
+  `dueDate` date ,
+  `retDate` date ,
+  PRIMARY KEY (`id`,`isbn`,`issDate`),
   KEY `isbn` (`isbn`),
   CONSTRAINT `trans_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`),
   CONSTRAINT `trans_ibfk_2` FOREIGN KEY (`isbn`) REFERENCES `book` (`isbn`)
@@ -67,7 +68,6 @@ CREATE TABLE `trans` (
 
 LOCK TABLES `trans` WRITE;
 /*!40000 ALTER TABLE `trans` DISABLE KEYS */;
-INSERT INTO `trans` VALUES (1,'Vishwas','ABC001','Learn Python',NULL,NULL),(1,'Vishwas','ABC004','Learn ML',NULL,NULL),(2,'Rujul','ABC003','Learn WebEngg',NULL,NULL),(2,'Rujul','ABC004','Learn ML',NULL,NULL),(3,'Shubham','ABC004','Learn ML',NULL,NULL),(3,'Shubham','ABC005','Learn HPC',NULL,NULL),(5,'Kevin','ABC001','Learn Python',NULL,NULL),(5,'Kevin','ABC003','Learn WebEngg',NULL,NULL),(6,'Fenish','ABC001','Learn Python',NULL,NULL),(6,'Fenish','ABC002','Learn MySQL',NULL,NULL),(7,'Sunny','ABC006','Learn ADBMS','2020-02-18','2020-02-19');
 /*!40000 ALTER TABLE `trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-18 10:52:47
+-- Dump completed on 2020-02-18 12:40:48

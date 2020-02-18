@@ -68,9 +68,15 @@
 
             console.log(inputs);
 
+            //var ddate = inputs["issDate"] + 10;
+
             var qry = "insert into trans(id, name, isbn, bookName, issDate) values('" + inputs["id"] + "','"+ inputs["name"] + "','" + inputs["isbn"] +"','" +inputs["bookName"]+"','"+inputs["issDate"]+"')";
             console.log(qry);
             dbQuery(qry);
+
+            var qry3 = "update trans set dueDate = (select date_add('"+inputs["issDate"]+"', interval 10 day)) where id = '"+inputs["id"]+"' and isbn = '"+inputs["isbn"]+"' and issDate = '"+inputs["issDate"]+"'"; 
+            console.log(qry3);
+            dbQuery(qry3);
 
             var qry2 = "update book set bookCount = bookCount - 1 where isbn = '"+inputs["isbn"]+"'";
             console.log(qry2);
