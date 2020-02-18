@@ -36,7 +36,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES ('ABC001','Learn Python',3),('ABC002','Learn MySQL',4),('ABC003','Learn WebEngg',2),('ABC004','Learn ML',4),('ABC005','Learn HPC',4),('ABC006','Learn ADBMS',5);
+INSERT INTO `book` VALUES ('ABC001','Learn Python',3),('ABC002','Learn MySQL',4),('ABC003','Learn WebEngg',2),('ABC004','Learn ML',5),('ABC005','Learn HPC',4),('ABC006','Learn ADBMS',4);
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,8 +53,8 @@ CREATE TABLE `trans` (
   `isbn` varchar(20) NOT NULL,
   `bookName` varchar(400) DEFAULT NULL,
   `issDate` date NOT NULL,
-  `dueDate` date ,
-  `retDate` date ,
+  `dueDate` date DEFAULT NULL,
+  `retDate` date DEFAULT NULL,
   PRIMARY KEY (`id`,`isbn`,`issDate`),
   KEY `isbn` (`isbn`),
   CONSTRAINT `trans_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`),
@@ -68,6 +68,7 @@ CREATE TABLE `trans` (
 
 LOCK TABLES `trans` WRITE;
 /*!40000 ALTER TABLE `trans` DISABLE KEYS */;
+INSERT INTO `trans` VALUES (3,'Shubham','ABC004','Learn ML','2020-02-18','2020-02-28','2020-02-19'),(4,'Shrutik','ABC001','Learn Python','2020-02-18','2020-02-28','2020-02-19'),(7,'Sunny','ABC006','Learn ADBMS','2020-02-18','2020-02-28','2020-02-19');
 /*!40000 ALTER TABLE `trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-18 12:40:48
+-- Dump completed on 2020-02-18 20:40:35
