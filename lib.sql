@@ -36,7 +36,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES ('ABC001','Learn Python',3),('ABC002','Learn MySQL',4),('ABC003','Learn WebEngg',2),('ABC004','Learn ML',4),('ABC005','Learn HPC',3),('ABC006','Learn ADBMS',6);
+INSERT INTO `book` VALUES ('ABC001','Learn Python',3),('ABC002','Learn MySQL',4),('ABC003','Learn WebEngg',2),('ABC004','Learn ML',4),('ABC005','Learn HPC',4),('ABC006','Learn ADBMS',5);
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,6 +52,8 @@ CREATE TABLE `trans` (
   `name` varchar(200) NOT NULL,
   `isbn` varchar(20) NOT NULL,
   `bookName` varchar(400) DEFAULT NULL,
+  `issDate` date DEFAULT NULL,
+  `retDate` date DEFAULT NULL,
   PRIMARY KEY (`id`,`isbn`),
   KEY `isbn` (`isbn`),
   CONSTRAINT `trans_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`),
@@ -65,7 +67,7 @@ CREATE TABLE `trans` (
 
 LOCK TABLES `trans` WRITE;
 /*!40000 ALTER TABLE `trans` DISABLE KEYS */;
-INSERT INTO `trans` VALUES (1,'Vishwas','ABC001','Learn Python'),(1,'Vishwas','ABC004','Learn ML'),(2,'Rujul','ABC003','Learn WebEngg'),(2,'Rujul','ABC004','Learn ML'),(3,'Shubham','ABC004','Learn ML'),(3,'Shubham','ABC005','Learn HPC'),(4,'Shrutik','ABC005','Learn HPC'),(5,'Kevin','ABC001','Learn Python'),(5,'Kevin','ABC003','Learn WebEngg'),(6,'Fenish','ABC001','Learn Python'),(6,'Fenish','ABC002','Learn MySQL');
+INSERT INTO `trans` VALUES (1,'Vishwas','ABC001','Learn Python',NULL,NULL),(1,'Vishwas','ABC004','Learn ML',NULL,NULL),(2,'Rujul','ABC003','Learn WebEngg',NULL,NULL),(2,'Rujul','ABC004','Learn ML',NULL,NULL),(3,'Shubham','ABC004','Learn ML',NULL,NULL),(3,'Shubham','ABC005','Learn HPC',NULL,NULL),(5,'Kevin','ABC001','Learn Python',NULL,NULL),(5,'Kevin','ABC003','Learn WebEngg',NULL,NULL),(6,'Fenish','ABC001','Learn Python',NULL,NULL),(6,'Fenish','ABC002','Learn MySQL',NULL,NULL),(7,'Sunny','ABC006','Learn ADBMS','2020-02-18','2020-02-19');
 /*!40000 ALTER TABLE `trans` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-17 20:46:39
+-- Dump completed on 2020-02-18 10:52:47
