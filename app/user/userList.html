@@ -19,7 +19,7 @@
     <script src="../../db_conn.js"></script>
    
 </head>
-<body>
+<body class="bg-image">
     <div class="container">
         <h3>These are the users!</h3>
         <hr>
@@ -36,7 +36,14 @@
             </tbody>
         </table>
     
-        <p id="queryConfirm"></p>
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="addUser.html"><button class="btnLink"">Add a User</button></a>
+            </div>   
+            <div class="col-sm-6">
+                <a href="removeUser.html"><button class="btnLink"">Remove a User</button></a>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -54,18 +61,6 @@
         })
 
     </script>
-
-    <div class="container" style="align-content: center; text-align: center;">
-        <div class="row">
-            <div class="col-sm-6">
-                <a href="addUser.html"><button class="btnLink"">Add a User</button></a>
-            </div>   
-            <div class="col-sm-6">
-                <a href="removeUser.html"><button class="btnLink"">Remove a User</button></a>
-            </div>
-        </div>
-    </div
-    >
 </body>
 
 </html>

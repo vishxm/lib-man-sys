@@ -19,7 +19,7 @@
     <script src="../../db_conn.js"></script>
    
 </head>
-<body>
+<body class="bg-image">
     <div class="container">
         <h3>Remove a User</h3>
         <br>
@@ -53,6 +53,10 @@
 
             console.log(inputs);
 
+            /*selectQry("select retDate from trans where id = '"+inputs["id"]+"'", function(rows) {
+                var tbl = '';
+
+            })*/
             var qry = "update book set bookCount = bookCount + 1 where isbn in ( select isbn from trans where id = '"+inputs["id"]+"')";
             console.log(qry);
             dbQuery(qry);

@@ -19,8 +19,8 @@
     <script src="../../db_conn.js"></script>
    
 </head>
-<body>
-    <div class="container">
+<body class="bg-image">
+    <div class="container" >
         <h3>These are the transactions!</h3>
         <hr>
         <table class="table" id="transList">
@@ -40,6 +40,16 @@
 
             </tbody>
         </table>
+    
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="addTrans.html"><button class="btnLink">Issue a Book</button></a>
+            </div>
+            
+            <div class="col-sm-6">
+                <a href="removeTrans.html"><button class="btnLink">Return a Book</button></a>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -61,18 +71,6 @@
             document.querySelector('#transList > tbody').innerHTML = tbl;
         })
     </script>
-
-    <div class="container" style="align-content: center; text-align: center;">
-        <div class="row">
-            <div class="col-sm-6">
-                <a href="addTrans.html"><button class="btnLink">Issue a Book</button></a>
-            </div>
-            
-            <div class="col-sm-6">
-                <a href="removeTrans.html"><button class="btnLink">Return a Book</button></a>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

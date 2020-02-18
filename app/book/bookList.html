@@ -19,7 +19,7 @@
     <script src="../../db_conn.js"></script>
    
 </head>
-<body>
+<body class="bg-image">
     <div class="container">
         <h3>These are the books!</h3>
         <hr>
@@ -36,6 +36,15 @@
 
             </tbody>
         </table>
+
+        <div class="row">
+            <div class="col-sm-6" style="text-align: center; align-content: center;">
+                <a href="addBook.html"><button class="btnLink">Add a book</button></a>
+            </div>
+            <div class="col-sm-6" style="text-align: center; align-content: center;">
+                <a href="removeBook.html"><button class="btnLink">Remove a book</button></a>
+            </div>   
+        </div>
     </div>
 
     <script>
@@ -53,17 +62,6 @@
             document.querySelector('#bookList > tbody').innerHTML = tbl;
         })
     </script>
-
-    <div class="container" style="align-content: center; text-align: center;">
-        <div class="row">
-            <div class="col-sm-6" style="text-align: center; align-content: center;">
-                <a href="addBook.html"><button class="btnLink">Add a book</button></a>
-            </div>
-            <div class="col-sm-6" style="text-align: center; align-content: center;">
-                <a href="removeBook.html"><button class="btnLink">Remove a book</button></a>
-            </div>   
-        </div>
-    </div>
 </body>
 
 </html>
