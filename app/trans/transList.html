@@ -30,6 +30,8 @@
                     <th>Student's Name</th>
                     <th>Book's ISBN</th>
                     <th>Book's Title</th>
+                    <th>Issue Date</th>
+                    <th>Return Date</th>
                 </tr>
             </thead> 
 
@@ -49,6 +51,8 @@
                 tbl = tbl + '<td>' + row.name + '</td>';
                 tbl = tbl + '<td>' + row.isbn + '</td>';
                 tbl = tbl + '<td>' + row.bookName + '</td>';
+                tbl = tbl + '<td>' + row.issDate + '</td>';
+                tbl = tbl + '<td>' + row.retDate + '</td>';
                 tbl += '</tr>';
             });
 
